@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ContactContext from "../context/contact/contactContext";
 
 const ContactItem = ({ contact }) => {
@@ -10,12 +10,9 @@ const ContactItem = ({ contact }) => {
     clearCurrent,
     getContacts
   } = contactContext;
-
   const onDelete = () => {
     deleteContact(_id);
-    // console.log(_id);
     clearCurrent();
-    getContacts();
   };
 
   const onSetCurrent = () => {
