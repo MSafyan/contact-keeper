@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27018:27017"
+  app:
+    container_name: contact-keeper-server
+    restart: always
+    build: .
+    ports:
+      - "5000:5000"
+    links:
+      - mongo
+  client:
+    container_name: contact-keeper-client
+    restart: always
+    build: ./client
+    # volumes:
+    #   - ./client:/usr/src/app/client
+    ports:
+      - "3000:3000"
