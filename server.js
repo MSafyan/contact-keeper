@@ -15,7 +15,7 @@ app.use(express.json({ extended: false }));
 connectDB();
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", "http://139.59.85.140:3000");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT,PATCH");
   res.setHeader(
     "Access-Control-Allow-Headers",
