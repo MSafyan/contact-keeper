@@ -85,7 +85,7 @@ const AuthState = props => {
       })
       .catch(error => {
         console.error(error);
-        dispatch({ type: LOGIN_FAIL, payload: error.response.data.msg });
+        dispatch({ type: LOGIN_FAIL, payload: error.response });
         // Promise.reject(error);
       });
   };

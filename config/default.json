@@ -1,6 +1,4 @@
 {
-  "omongoURI": "mongodb+srv://safyan:N1btana!080@cluster0-f9smh.mongodb.net/test?retryWrites=true&w=majority",
-  "mmongoURI": "mongodb://localhost:27017/contact-keeper",
   "mongoURI": "mongodb://mongo:27017/contact-keeper",
   "jwtSecret": "anything"
 }
