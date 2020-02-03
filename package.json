@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "proxy": "localhost:3000",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
