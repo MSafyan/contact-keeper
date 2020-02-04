@@ -35,7 +35,7 @@ const AuthState = props => {
     };
 
     axios
-      .post("http://139.59.85.140:5000/api/users", formdata)
+      .post("http://134.209.149.249:5000/api/users", formdata)
       .then(res => {
         dispatch({ type: REGISTER_SUCCESS, payload: res.data });
         loadUser();
@@ -63,7 +63,7 @@ const AuthState = props => {
     }
 
     try {
-      const res = await axios.get("http://139.59.85.140:5000/api/auth");
+      const res = await axios.get("http://134.209.149.249:5000/api/auth");
       // console.log(res);
       dispatch({ type: USER_LOADED, payload: res.data });
     } catch (err) {
@@ -78,7 +78,7 @@ const AuthState = props => {
       }
     };
     const res = await axios
-      .post("'http://139.59.85.140:5000/api/auth", formdata)
+      .post("'http://134.209.149.249:5000/api/auth", formdata)
       .then(res => {
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
         loadUser();
