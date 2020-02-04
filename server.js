@@ -5,27 +5,29 @@ const bodyParser = require("body-parser");
 require("dotenv/config");
 const path = require("path");
 const mongoose = require("mongoose");
-
+const cors = require("cors");
 const connectDB = require("./config/db");
 
 app.use(bodyParser.json());
 
 app.use(express.json({ extended: false }));
 
+app.use(cors());
+app.options("*", cors());
 connectDB();
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "http://139.59.85.140:3000,http://localhost:3000"
-  );
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT,PATCH");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With,Content-Type,Authorization,x-token-auth,x-auth-token"
-  );
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader(
+//     "Access-Control-Allow-Origin",
+//     "http://139.59.85.140:3000,http://localhost:3000"
+//   );
+//   res.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT,PATCH");
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With,Content-Type,Authorization,x-token-auth,x-auth-token"
+//   );
+//   next();
+// });
 
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));

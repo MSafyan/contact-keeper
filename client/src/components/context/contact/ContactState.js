@@ -26,7 +26,7 @@ const ContactState = props => {
 
   const getContacts = async () => {
     try {
-      const res = await axios.get("http://139.59.85.140:5000/api/contacts");
+      const res = await axios.get("http://134.209.149.249:5000/api/contacts");
       dispatch({ type: GET_CONTACTS, payload: res.data });
     } catch (error) {
       dispatch({ type: CONTACT_ERROR, payload: error });
@@ -36,7 +36,7 @@ const ContactState = props => {
   const addContact = async contact => {
     try {
       const res = await axios.post(
-        "http://139.59.85.140:5000/api/contacts",
+        "http://134.209.149.249:5000/api/contacts",
         contact
       );
       dispatch({ type: ADD_CONTACT, payload: res.data });
@@ -48,7 +48,7 @@ const ContactState = props => {
   const deleteContact = async id => {
     try {
       const res = await axios.delete(
-        `http://139.59.85.140:5000/api/contacts/${id}`
+        `http://134.209.149.249:5000/api/contacts/${id}`
       );
       dispatch({ type: DELETE_CONTACT, payload: res.data });
     } catch (error) {
@@ -58,7 +58,7 @@ const ContactState = props => {
   const updateContact = async contact => {
     try {
       const res = await axios.put(
-        `http://139.59.85.140:5000/api/contacts/${contact._id}`,
+        `http://134.209.149.249:5000/api/contacts/${contact._id}`,
         contact
       );
       dispatch({ type: UPDATE_CONTACT, payload: res.data });
